@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ChatStitch">
+  <meta name="keywords" content="Surround-View, Image Stitch, Human-Machine">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChatStitch</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZB065N93SK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZB065N93SK');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  <!-- <link rel="stylesheet" href="./static/css/foundation.css"/> -->
+  <link rel="stylesheet" href="./static/css/twentytwenty.css"/>
+  <link rel="stylesheet" href="./static/css/titleCenter.css"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/jquery.twentytwenty.js"></script>
+  <script>
+    $(function(){
+      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.7});
+      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.3, orientation: 'vertical'});
+    });
+    </script>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto;
+      gap: 10px;
+      padding: 0;
+    }
+    
+    .grid-container > div {
+      text-align: center;
+      padding: 0;
+      font-size: 30px;
+    }
+    
+    .item1 {
+      grid-column: 1 / 4;
+    }
+    .item2 {
+      grid-column: 5 / 8;
+    }
+    .item3 {
+      grid-column: 1 / 4;
+    }
+    .item4 {
+      grid-column: 5 / 8;
+    }
+    
+    .content h4 {
+      font-size: 16px; !important;
+      padding: 0;
+      margin: 0; !important;
+    }
+    
+    hr {
+      background-color: lightgray;!important;
+    }
+    
+    </style>
+  <!-- 下面用于加载网页中的3D模型 -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_instance","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_instance_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_partfeat","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_partfeat_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_rgb","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_rgb_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office0_semantic","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_0_semantic_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_instance","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_instance_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_partfeat","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_partfeat_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_rgb","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_rgb_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"office3_semantic","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/office_3_semantic_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_instance","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_instance_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_partfeat","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_partfeat_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_rgb","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_rgb_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+  <script type="application/ld+json">{"@context":"http://schema.org/","@type":"3DModel","name":"room0_semantic","encoding":[{"@type":"MediaObject","contentUrl":"./static/3dModel/room_0_semantic_colored_scene.glb","encodingFormat":"model/gltf-binary"}]}</script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://OpenObj.github.io/">
+              OpenObj
+            </a>
+            <a class="navbar-item" href="https://OpenObject-nav.github.io/">
+              OpenObject-NAV
+            </a>
+            <a class="navbar-item" href="https://inin-drops.github.io/UVM-VSS/">
+              UVM-VSS
+            </a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ChatStitch: Visualizing Through Structures via Surround-View Unsupervised Deep Image Stitching with Collaborative LLM-Agents</h1>
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="https://lhlawrence.github.io/">Hao Liang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://dzp62442.github.io">Zhipeng Dong</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href=" ">Mengyin Fu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href=" ">Yi Yang</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block"><sup>1</sup>Beijing Institute of Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block"> 
+                <a href="https://arxiv.org/pdf/2503.14948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2503.14948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/CqoVZQdvxU4"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/lhlawrence/ChatStitch"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <style>
+        .title.is-3 {
+          text-align: center;
+        }
+      </style>
+      <h2 class="title is-3">Poster</h2>
+      <img id="teaser" src="./static/images/poster.png" alt="teaser">
+      <h2 class="subtitle has-text-centered">
+        <span class="UVM-VSS"> ChatStitch Reveals Occluded Vehicles in Stitched Surround-View Images via Language Commands. </span>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/CqoVZQdvxU4"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p style="text-indent: 2em;">
+            Surround-view perception has garnered significant attention for its ability to enhance the perception capabilities of autonomous driving vehicles through the exchange of information with surrounding cameras. 
+            However, existing surround-view perception systems are limited by inefficiencies in unidirectional interaction pattern with human and distortions in overlapping regions exponentially propagating into non-overlapping areas. 
+            To address these challenges, this paper introduces ChatStitch, a surround-View human-machine co-perception system capable of unveiling obscured blind spot information through natural language commands integrated with external digital assets. 
+            To dismantle the unidirectional interaction bottleneck, ChatStitch implements a cognitively grounded closed-loop interaction framework based on Large Language Models. 
+            To suppress distortion propagation across overlapping boundaries, ChatStitch proposes SV-UDIS, a surround-view unsupervised deep image stitching method under the non-global-overlapping condition. 
+            We conducted extensive experiments on the UDIS-D, MCOV-SLAM open datasets, and our real-world dataset. 
+            Specifically, our SV-UDIS method achieves state-of-the-art performance on the UDIS-D dataset for 3, 4, and 5 image stitching tasks, with PSNR improvements of 9\%, 17\%, and 21\%, and SSIM improvements of 8\%, 18\%, and 26\%, respectively.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <style>
+        .title.is-3 {
+          text-align: center;
+        }
+      </style>
+      <h2 class="title is-3">SV-UDIS Framework</h2>
+      <div class="content has-text-justified">
+        <p style="text-indent: 2em;">
+          Overview of our proposed SV-UDIS. The pipeline mainly includes three stages: Masked cylindrical projection and feature extraction, 
+          multi-image warping, and multi-image composition. Our main contributions are shown in detail at the bottom of the figure.
+        </p>
+      </div>
+      <img id="teaser" src="./static/images/pipeline.png" alt="teaser">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <!-- Animation. -->
+      <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+
+        <!-- Stab. -->
+        <h3 class="title is-4">Stabilization Results</h3>
+          <img id="teaser" src="./static/images/stabresult.png" alt="teaser">
+          <h2 class="subtitle has-text-centered">
+            <span>Stabilization results with others</span>
+          </h2>
+
+        <!-- Stitch. -->
+        <h3 class="title is-4">Stitching Results</h3>
+        <img id="teaser" src="./static/images/stitchresult.png" alt="teaser">
+        <h2 class="subtitle has-text-centered">
+          <span>Stitching results with others</span>
+        </h2>
+        <!--/ Joint. -->
+
+        <h3 class="title is-4">Joint Stabilization and Stitching Results</h3>
+        <div class="publication-video">
+          <video controls>
+            <source src="./static/images/result.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+    <!--/ Animation. -->
+    </div>
+    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+    <script src="./static/js/select.js"></script>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ChatStitch,
+      title={ChatStitch: Visualizing Through Structures via Surround-View Unsupervised Deep Image Stitching with Collaborative LLM-Agents}, 
+      author={Hao Liang and Zhipeng Dong and Yi Yang and Mengyin Fu},
+      year={2025},
+      eprint={2503.14948},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2503.14948}}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
