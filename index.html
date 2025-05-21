@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description"
         content="ChatStitch">
-  <meta name="keywords" content="Surround-View, Image Stitch, Human-Machine">
+  <meta name="keywords" content="Surround-View, Image Stitch, Human-Machine Interaction">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ChatStitch</title>
 
@@ -144,6 +144,15 @@
             <span class="author-block">
               <a href="https://dzp62442.github.io">Zhipeng Dong</a><sup>1</sup>,</span>
             <span class="author-block">
+              <a href=" ">Kaixin Chen</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href=" ">Jiyuan Guo</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href=" ">Yufeng Yue</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
               <a href=" ">Mengyin Fu</a><sup>1</sup>,
             </span>
             <span class="author-block">
@@ -151,7 +160,7 @@
             </span>
           </div>
 
-          <div class="is-size-4 publication-authors">
+          <div class="is-size-7 publication-authors">
             <span class="author-block"><sup>1</sup>Beijing Institute of Technology</span>
           </div>
 
@@ -246,11 +255,12 @@
           <p style="text-indent: 2em;">
             Surround-view perception has garnered significant attention for its ability to enhance the perception capabilities of autonomous driving vehicles through the exchange of information with surrounding cameras. 
             However, existing surround-view perception systems are limited by inefficiencies in unidirectional interaction pattern with human and distortions in overlapping regions exponentially propagating into non-overlapping areas. 
-            To address these challenges, this paper introduces ChatStitch, a surround-View human-machine co-perception system capable of unveiling obscured blind spot information through natural language commands integrated with external digital assets. 
-            To dismantle the unidirectional interaction bottleneck, ChatStitch implements a cognitively grounded closed-loop interaction framework based on Large Language Models. 
+            To address these challenges, this paper introduces ChatStitch, a surround-view human-machine co-perception system capable of unveiling obscured blind spot information through natural language commands integrated with external digital assets. 
+            To dismantle the unidirectional interaction bottleneck, ChatStitch implements a cognitively grounded closed-loop interaction multi-agent framework based on Large Language Models. 
             To suppress distortion propagation across overlapping boundaries, ChatStitch proposes SV-UDIS, a surround-view unsupervised deep image stitching method under the non-global-overlapping condition. 
             We conducted extensive experiments on the UDIS-D, MCOV-SLAM open datasets, and our real-world dataset. 
-            Specifically, our SV-UDIS method achieves state-of-the-art performance on the UDIS-D dataset for 3, 4, and 5 image stitching tasks, with PSNR improvements of 9\%, 17\%, and 21\%, and SSIM improvements of 8\%, 18\%, and 26\%, respectively.
+            Specifically, our SV-UDIS method achieves state-of-the-art performance on the UDIS-D\footnote{we extract a subset of data from the original UDIS-D dataset for the multi-image stitching experiment.} 
+            dataset for 3, 4, and 5 image stitching tasks, with PSNR improvements of 9\%, 17\%, and 21\%, and SSIM improvements of 8\%, 18\%, and 26\%, respectively.
           </p>
         </div>
       </div>
@@ -288,25 +298,46 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Results</h2>
 
-        <!-- Stab. -->
-        <h3 class="title is-4">Stabilization Results</h3>
-          <img id="teaser" src="./static/images/stabresult.png" alt="teaser">
+        <!-- two udis. -->
+        <h3 class="title is-4">Two-image stitching on the UDIS-D Results</h3>
+          <img id="teaser" src="./static/images/suppl-two-stitch-udis.png" alt="teaser">
           <h2 class="subtitle has-text-centered">
-            <span>Stabilization results with others</span>
+            <span>Qualitative comparison of two-image stitching on the UDIS-D</span>
           </h2>
 
-        <!-- Stitch. -->
-        <h3 class="title is-4">Stitching Results</h3>
-        <img id="teaser" src="./static/images/stitchresult.png" alt="teaser">
+        <!-- two mcov. -->
+        <h3 class="title is-4">Two-image stitching on the MCOV-SLAM Results</h3>
+          <img id="teaser" src="./static/images/suppl-two-stitch-mcov.png" alt="teaser">
+          <h2 class="subtitle has-text-centered">
+            <span>Qualitative comparison of two-image stitching on the MCOV-SLAM</span>
+          </h2>
+
+         <!-- multi udis. -->
+         <h3 class="title is-4">Multi-image stitching on the UDIS-D Results</h3>
+         <img id="teaser" src="./static/images/suppl-multi-stitch-udis.png" alt="teaser">
+         <h2 class="subtitle has-text-centered">
+           <span>Qualitative comparison of multi-image stitching on the UDIS-D</span>
+         </h2>
+
+          <!-- multi mcov. -->
+        <h3 class="title is-4">Multi-image stitching on the MCOV-SLAM Results</h3>
+        <img id="teaser" src="./static/images/suppl-multi-stitch-results.png" alt="teaser">
         <h2 class="subtitle has-text-centered">
-          <span>Stitching results with others</span>
+          <span>The results of multi-image stitching by our SV-UDIS on the MCOV-SLAM dataset.</span>
+        </h2>
+        
+        <!-- command. -->
+        <h3 class="title is-4">LLM Command</h3>
+        <img id="teaser" src="./static/images/complex_command.png" alt="teaser">
+        <h2 class="subtitle has-text-centered">
+          <span>Result under a complex command. ”With” and ”without” represent the outcomes before and after our processing</span>
         </h2>
         <!--/ Joint. -->
 
-        <h3 class="title is-4">Joint Stabilization and Stitching Results</h3>
+        <h3 class="title is-4">Results in real-world</h3>
         <div class="publication-video">
           <video controls>
-            <source src="./static/images/result.mp4" type="video/mp4">
+            <source src="./static/images/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
