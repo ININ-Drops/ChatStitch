@@ -147,6 +147,9 @@
               <a href=" ">Kaixin Chen</a><sup>1</sup>,
             </span>
             <span class="author-block">
+              <a href=" ">Hao Li</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
               <a href=" ">Jiyuan Guo</a><sup>1</sup>,
             </span>
             <span class="author-block">
@@ -270,7 +273,7 @@
             To suppress distortion propagation across overlapping boundaries, ChatStitch proposes SV-UDIS, a surround-view unsupervised deep image stitching method under the non-global-overlapping condition. 
             We conducted extensive experiments on the UDIS-D, MCOV-SLAM open datasets, and our real-world dataset. 
             Specifically, our SV-UDIS method achieves state-of-the-art performance on the UDIS-D\footnote{we extract a subset of data from the original UDIS-D dataset for the multi-image stitching experiment.} 
-            dataset for 3, 4, and 5 image stitching tasks, with PSNR improvements of 9\%, 17\%, and 21\%, and SSIM improvements of 8\%, 18\%, and 26\%, respectively.
+            dataset for 3, 4, and 5 image stitching tasks, with PSNR improvements of 9%, 17%, and 21%, and SSIM improvements of 8%, 18%, and 26%, respectively.
           </p>
         </div>
       </div>
@@ -288,13 +291,13 @@
         }
       </style>
       <h2 class="title is-3">SV-UDIS Framework</h2>
+      <img id="teaser" src="./static/images/sv-udis-framework.png" alt="teaser">
       <div class="content has-text-justified">
         <p style="text-indent: 2em;">
           Overview of our proposed SV-UDIS. The pipeline mainly includes three stages: Masked cylindrical projection and feature extraction, 
           multi-image warping, and multi-image composition. Our main contributions are shown in detail at the bottom of the figure.
         </p>
       </div>
-      <img id="teaser" src="./static/images/sv-udis-framework.png" alt="teaser">
     </div>
   </div>
 </section>
@@ -308,30 +311,37 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Results</h2>
 
+        <!-- qquantitative comparison. -->
+        <h3 class="title is-4">Quantitative comparison</h3>
+          <img id="teaser" src="./static/images/quantitative_comparison.png" alt="teaser">
+          <h2 class="subtitle has-text-centered">
+            <span>Quantitative comparison of multi-image stitching on UDIS-D and MCOV-SLAM datasets.</span>
+          </h2>
+        
         <!-- two udis. -->
         <h3 class="title is-4">Two-image stitching on the UDIS-D Results</h3>
           <img id="teaser" src="./static/images/two-stitch-udis.png" alt="teaser">
           <h2 class="subtitle has-text-centered">
-            <span>Qualitative comparison of two-image stitching on the UDIS-D</span>
+            <span>Qualitative comparison of two-image stitching on the UDIS-D dataset.</span>
           </h2>
 
         <!-- two mcov. -->
         <h3 class="title is-4">Two-image stitching on the MCOV-SLAM Results</h3>
           <img id="teaser" src="./static/images/two-stitch-mcov.png" alt="teaser">
           <h2 class="subtitle has-text-centered">
-            <span>Qualitative comparison of two-image stitching on the MCOV-SLAM</span>
+            <span>Qualitative comparison of two-image stitching on the MCOV-SLAM dataset.</span>
           </h2>
 
         <!-- multi udis. -->
         <h3 class="title is-4">Multi-image stitching on the UDIS-D Results</h3>
           <img id="teaser" src="./static/images/multi-stitch-udis.png" alt="teaser">
           <h2 class="subtitle has-text-centered">
-            <span>Qualitative comparison of multi-image stitching on the UDIS-D</span>
+            <span>Qualitative comparison of multi-image stitching on the UDIS-D dataset.</span>
           </h2>
 
         <!-- multi mcov. -->
         <h3 class="title is-4">Multi-image stitching on the MCOV-SLAM Results</h3>
-          <img id="teaser" src="./static/images/multi-stitch-mcov.png" alt="teaser">
+          <img id="teaser" src="./static/images/multi-stitch-mcov-ours.png" alt="teaser">
           <h2 class="subtitle has-text-centered">
             <span>The results of multi-image stitching by our SV-UDIS on the MCOV-SLAM dataset.</span>
           </h2>
@@ -358,7 +368,7 @@
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{ChatStitch,
       title={ChatStitch: Visualizing Through Structures via Surround-View Unsupervised Deep Image Stitching with Collaborative LLM-Agents}, 
-      author={Hao Liang and Zhipeng Dong and Kaixin Chen and Jiyuan Guo and Yufeng Yue and Yi Yang and Mengyin Fu},
+      author={Hao Liang and Zhipeng Dong and Kaixin Chen and Hao Li and Jiyuan Guo and Yufeng Yue and Yi Yang and Mengyin Fu},
       year={2025},
       eprint={2503.14948},
       archivePrefix={arXiv},
